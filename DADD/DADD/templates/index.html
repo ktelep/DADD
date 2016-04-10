@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="row">
+   <div id="status_row">
+       <ul class="list-inline">
+           <li class="state_circle"><button type="button" class="btn btn-danger btn-circle btn-xl">5</button><br />Event</li>
+           <li class="state_circle"><button type="button" class="btn btn-danger btn-circle btn-xl">2</button><br />Opportunity</li>
+           <li class="state_circle"><button type="button" class="btn btn-danger btn-circle btn-xl">1</button><br />Research</li>
+           <li class="state_circle"><button type="button" class="btn btn-danger btn-circle btn-xl">4</button><br />Design</li>
+           <li class="state_circle"><button type="button" class="btn btn-danger btn-circle btn-xl">6</button><br />Review</li>
+           <li class="state_circle"><button type="button" class="btn btn-danger btn-circle btn-xl">4</button><br />Propose</li>
+           <li class="state_circle"><button type="button" class="btn btn-danger btn-circle btn-xl">4</button><br />Holding</li>
+       </ul>
+       
+        
+   </div>
+</div>
+<div class="row">
+    <div id="table_test">
+        <table width="100%" class="display table-striped" id="example" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Name</th>
+
+                    <th>Position</th>
+
+                    <th>Office</th>
+
+                    <th>Age</th>
+
+                    <th>Start date</th>
+
+                    <th>Salary</th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                     <td>Paul Byrd</td>
+                    <td>Chief Financial Officer (CFO)</td>
+                    <td>New York</td>
+                    <td>64</td>
+                    <td>2010/06/09</td>
+                    <td>$725,000</td>
+                </tr>
+                <tr>
+                    <td>Paul Byrd</td>
+                    <td>Chief Financial Officer (CFO)</td>
+                    <td>New York</td>
+                    <td>64</td>
+                    <td>2010/06/09</td>
+                    <td>$725,000</td>
+                </tr>
+                <tr>
+                    <td>Paul Byrd</td>
+                    <td>Chief Financial Officer (CFO)</td>
+                    <td>New York</td>
+                    <td>64</td>
+                    <td>2010/06/09</td>
+                    <td>$725,000</td>
+                </tr>
+                <tr>
+                    <td>Paul Byrd</td>
+                    <td>Chief Financial Officer (CFO)</td>
+                    <td>New York</td>
+                    <td>64</td>
+                    <td>2010/06/09</td>
+                    <td>$725,000</td>
+                </tr>
+                <tr>
+                    <td>Paul Byrd</td>
+                    <td>Chief Financial Officer (CFO)</td>
+                    <td>New York</td>
+                    <td>64</td>
+                    <td>2010/06/09</td>
+                    <td>$725,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+<div class="row">
+    <div id="menu">
+        <div class="panel list-group">
+            <a class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">Event <span class="label label-info">5</span> <span class="glyphicon glyphicon-plus pull-right"></a>
+            <div class="sublinks collapse" id="sm">
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> Subitem 1</a>
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> Subitem 2</a>
+            </div>
+            <a class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Opportunity <span class="glyphicon glyphicon-plus pull-right"> </span></a>
+            <div class="sublinks collapse" id="sl">
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> saved tasks</a>
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> add new task</a>
+            </div>
+            <a class="list-group-item" data-toggle="collapse" data-target="#sn" data-parent="#menu">Research <span class="glyphicon glyphicon-plus pull-right"> </span></a>
+            <div class="sublinks collapse" id="sn">
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> saved tasks</a>
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> add new task</a>
+            </div>
+            <a class="list-group-item" data-toggle="collapse" data-target="#so" data-parent="#menu">Design <span class="glyphicon glyphicon-plus pull-right"> </span></a>
+            <div class="sublinks collapse" id="so">
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> saved tasks</a>
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> add new task</a>
+            </div>
+            <a class="list-group-item" data-toggle="collapse" data-target="#sp" data-parent="#menu">Review <span class="glyphicon glyphicon-plus pull-right"> </span></a>
+            <div class="sublinks collapse" id="sp">
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> saved tasks</a>
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> add new task</a>
+            </div>
+            <a class="list-group-item" data-toggle="collapse" data-target="#sq" data-parent="#menu">Propose <span class="glyphicon glyphicon-plus pull-right"> </span></a>
+            <div class="sublinks collapse" id="sq">
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> saved tasks</a>
+                <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> add new task</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            ordering: false,
+            rowReorder: { dataSrc: 'sequence' },
+            paging: false,
+            searching: false,
+            bInfo: false
+        });
+    } );
+    </script>
+{% endblock %}
